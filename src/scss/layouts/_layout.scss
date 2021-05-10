@@ -91,3 +91,98 @@ button:focus {
   border: none;
   outline: none;
 }
+.positioning {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 15rem;
+  height: 15rem;
+}
+.rabbit {
+  top: 0rem;
+  left: 30rem;
+  width: 5em;
+  height: 3em;
+  background: #ffffff;
+  border-radius: 70% 90% 60% 50%;
+
+  box-shadow: -0.2em 1em 0 -0.75em #ffffff00;
+  // ??
+  transform: rotate(0deg) translate(-2em, 0);
+
+  animation: hop 0.7s infinite paused linear;
+  z-index: 1;
+  .no-flexbox & {
+    margin: 10em auto 0;
+  }
+  &_run {
+    animation-play-state: running !important;
+  }
+  &_stop {
+    animation-play-state: paused !important;
+  }
+  //tail, eye, feet
+  &:before {
+    content: "";
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    background: white; // tail
+    border-radius: 100%;
+    top: 0.5em;
+    left: -0.3em;
+    box-shadow: 4em 0.4em 0 -0.35em #3f3334,
+      // eye
+      0.5em 1em 0 white,
+      // back foot
+      4em 1em 0 -0.3em white,
+      // front foot
+      4em 1em 0 -0.3em white,
+      4em 1em 0 -0.4em white;
+    animation: kick 0.6s infinite linear;
+  }
+
+  // ears
+  &:after {
+    content: "";
+    position: absolute;
+    width: 0.75em;
+    height: 2em;
+    background: white;
+    border-radius: 50% 100% 0 0;
+    //??
+    transform: rotate(-30deg);
+    right: 1em;
+    top: -1em;
+    border-top: 1px solid #f7f5f4;
+    border-left: 1px solid #f7f5f4;
+    box-shadow: -0.5em 0em 0 -0.1em white;
+  }
+}
+
+@keyframes hop {
+  20% {
+    transform: (rotate(-10deg) translate(1em, -2em));
+  }
+  40% {
+    transform: (rotate(10deg) translate(3em, -4em));
+  }
+  60%,
+  75% {
+    transform: (rotate(0) translate(4em, 0));
+  }
+}
+@keyframes kick {
+  20%,
+  50% {
+    box-shadow: 4em 0.4em 0 -0.35em #3f3334, 0.5em 1.5em 0 white,
+      4em 1.75em 0 -0.3em white, 4em 1.75em 0 -0.3em white,
+      4em 1.9em 0 -0.4em white;
+  }
+  40% {
+    box-shadow: 4em 0.4em 0 -0.35em #3f3334, 0.5em 2em 0 white,
+      4em 1.75em 0 -0.3em white, 4.2em 1.75em 0 -0.2em white,
+      4.4em 1.9em 0 -0.2em white;
+  }
+}

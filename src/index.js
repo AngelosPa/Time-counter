@@ -65,3 +65,19 @@ const resetCounting = () => {
 buttonstart.addEventListener("click", startCounting);
 buttonstop.addEventListener("click", stopCounting);
 buttonreset.addEventListener("click", resetCounting);
+
+// for the rabbit
+const rabbit = document.querySelector(".rabbit");
+let jumphalt = document.querySelector(".rabbit");
+const running = () => {
+  jumphalt.classList.add("rabbit_run");
+  jumphalt.classList.remove("rabbit_stop");
+};
+const notrunning = () => {
+  jumphalt.classList.add("rabbit_stop");
+  jumphalt.classList.remove("rabbit_run");
+};
+
+buttonstart.addEventListener("click", running);
+buttonreset.addEventListener("click", notrunning);
+buttonstop.addEventListener("click", notrunning);
