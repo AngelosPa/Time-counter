@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  font-size: 1rem;
+  text-align: center;
+  background-color: black;
+}
+
+.clockcontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 20vh;
+  font-size: 2rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+.nacht {
+  background: linear-gradient(#120116, #38032d);
+  color: aliceblue;
+}
+
+.morgen {
+  background: linear-gradient(#f39243, #158002);
+  color: black;
+}
+
+.mittag {
+  background: linear-gradient(#158002, #2945c0);
+  color: black;
+}
+
+.abend {
+  background: linear-gradient(#2945c0, #120116);
+  color: aliceblue;
+}
+
+#MyClockDisplay {
+  font-size: 3rem;
+  letter-spacing: 0.5rem;
+}
+
+.wrapper {
+  background-color: #074607;
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+p,
+span {
+  font-size: 3rem;
+}
+
+button {
+  font-size: 1.7rem;
+  height: 7rem;
+  width: 7rem;
+  border-radius: 100%;
+  color: white;
+  border: none;
+}
+
+#button-start {
+  background-color: red;
+}
+
+#button-stop {
+  background-color: #83410b;
+}
+
+#button-reset {
+  background-color: black;
+}
+
+button:disabled {
+  background-color: green;
+  opacity: 30%;
+}
+
+button:focus {
+  border: none;
+  outline: none;
+}
+
+/*# sourceMappingURL=main.css.map */
